@@ -1,0 +1,32 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>enerbos-cloud-tts</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>enerbos-cloud-tts</name>
+
+    <parent>
+        <groupId>com.enerbos</groupId>
+        <artifactId>enerbos-cloud-microservice-parent</artifactId>
+        <version>1.1.0-SNAPSHOT</version>
+    </parent>
+
+    <modules>
+        <module>enerbos-tts-microservice</module>
+        <module>enerbos-tts-client</module>
+        <module>enerbos-tts-vo</module>
+    </modules>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>com.enerbos</groupId>
+            <artifactId>enerbos-cloud-common</artifactId>
+            <version>1.1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+</project>

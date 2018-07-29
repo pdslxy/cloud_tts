@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: enerbos-tts-microservice

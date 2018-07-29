@@ -1,0 +1,52 @@
+server:
+  port: 9240
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
+  instance:
+    preferIpAddress: true
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://192.168.1.9:3306/eis_dev?useUnicode=true&characterEncoding=utf-8
+    username: eis
+    password: eis,4357
+    driverClass: com.mysql.jdbc.Driver
+    maxActive: 10
+    initialSize: 5
+    minIdel: 1
+    validationQuery: SELECT 'x'
+    maxWait: 60000
+    testOnBorrow: true
+    testOnReturn: true
+    testWhileIdle: true
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 60000
+  jpa:
+    hibernate.ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+  zipkin:
+    base-url: http://192.168.1.5:5002
+management:
+  security:
+    enabled: false
+endpoints:
+  health:
+    sensitive: false
+
+hystrix:
+  command:
+      default:
+        execution:
+          isolation:
+            thread:
+              timeoutInMilliseconds: 5000
+#time task
+regCenter:
+  serverList: 192.168.1.246:2181
+  namespace: tts-time-task-subscribe
+  digest:

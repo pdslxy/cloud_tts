@@ -1,0 +1,16 @@
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://enerbos-cloud-discovery-service:9001/eureka/
+
+spring:
+  datasource:
+    url: jdbc:mysql://rdsm7x690fkuw256s82m.mysql.rds.aliyuncs.com/ec_tts?useUnicode=true&characterEncoding=utf-8
+    username: ec_tts
+    password: tts,admin,123
+  zipkin:
+    base-url: http://enerbos-zipkin-service:5002
+
+regCenter:
+  serverList: enerbos-zookeeper-service:2181
